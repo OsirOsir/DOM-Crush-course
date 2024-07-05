@@ -42,3 +42,17 @@
 
 // console.log(bookList.childNodes)
 
+// const bookList = document.querySelector('#book-list');
+// console.log('book-list next sibling is:', bookList.nextElementSibling)
+
+// bookList.previousElementSibling.querySelector('p').innerHTML += '<br />To cool to handle'
+
+let btns = document.querySelectorAll('#book-list .delete');
+
+
+Array.from(btns).forEach(function(btn){
+  btn.addEventListener("click", function(e){
+    const li = e.target.parentElement;
+    li.parentNode.removeChild(li)
+  })
+})
